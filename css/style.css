@@ -42,3 +42,17 @@ section.index h4.boast {
 section.index h4.boast span.spacer {
     color: #f00;
 }
+
+nav.index {
+    display: block;
+    margin: 1em auto;
+    padding: 1em;
+    text-align: center;
+}
+nav.index a {
+    display: inline-block;
+    margin: 0;
+    padding: 0 1em;
+    color: #a0a0a0;
+    font-size: 2em;
+}
