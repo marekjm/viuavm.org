@@ -27,3 +27,43 @@ layout: default
     </p>
     <div class="clear"></div>
 </div>
+
+<div class="chapter">
+    <h2> Features </h2>
+    <p> Machine provides programmers with the following set of features ("WIP" means "Work In Progress", "PF" means "Planned Feature"):
+        <ul>
+            <li>compile-time checks of code perfomed by the assembler</li>
+            <li>separate compilation (assembler is able to produce "object files")</li>
+            <li>static and dynamic linking</li>
+            <li>hot-swapping dynamically linked modules (WIP)</li>
+            <li>exception-based error handling (every object is throwable and catchable)</li>
+            <li>first-class functions</li>
+            <li>arity-based function overloading</li>
+            <li>mechanisms for static and dynamic dispatch of method calls</li>
+            <li>concurrency</li>
+            <li>parallelism (given sufficient hardware resources)</li>
+            <li>scope-based resource management (no garbage collector)</li>
+            <li>coroutines (PF)</li>
+            <li>non-blocking foreign function interface (requires at least two-core CPU)</li>
+            <li>virtual process restarting (via user-programmed watchdog process)</li>
+            <li>clean FFI for straightforward cooperation with C++ code</li>
+            <li>no-copy function returns</li>
+            <li>by-copy and by-move parameter passing to functions</li>
+            <li>safe pointers for inside-VM objects</li>
+            <li>move semantics for many instructions</li>
+            <li>closures with multiple capture mechanisms (by-copy, by-reference, by-move)</li>
+        </ul>
+    </p>
+
+    <h2> Requirements </h2>
+    <p> Machine requires:
+        <ul>
+            <li> a modern C++ compiler supporting C++14; builds are tested with GCC, and Clang++</li>
+            <li> Python 3.5 (or later) is required to run the test suite </li>
+            <li> recent version of Valgrind (3.11 and later) is required for memory tests </li>
+            <li> GNU Make (or compatible build system) is required to compile the code </li>
+            <li> developer scripts assume presence of standard *nix tools: <code>sed</code>, <code>dc</code>, <code>find</code>, <code>xargs</code>, a sh-compatible shell, and Linux operating system </li>
+            <li> compilation without developer scripts requires a *nix-like operating system </li>
+        </ul>
+    </p>
+</div>
