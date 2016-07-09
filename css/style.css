@@ -70,3 +70,42 @@ body.index footer {
     text-align: center;
     font-family: monospace;
 }
+
+
+/*
+ ***********************************************************
+ *  Global styles.
+ ***********************************************************
+ */
+body footer {
+    display: block;
+    margin: 2em 0 0 0;
+    padding: 1em;
+    color: #a0a0a0;
+    font-size: 1em;
+    text-align: center;
+    font-family: monospace;
+}
+
+nav {
+    display: block;
+    margin: 0 0 1em 0;
+    padding: 1em;
+    text-align: left;
+    font-family: monospace;
+}
+nav a {
+    display: inline-block;
+    margin: 0;
+    padding: 0 0.2em;
+    color: #80a080;
+    font-size: 1.25em;
+    text-decoration: none;
+}
+nav a:hover {
+    color: #a0f0a0;
+    text-decoration: underline;
+}
+nav span.spacer {
+    color: #f00;
+}
