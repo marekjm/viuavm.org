@@ -10,6 +10,7 @@ html, body {
     font-family: monospace;
 }
 
+
 /*
  ***********************************************************
  *  Index styles.
@@ -55,4 +56,13 @@ nav.index a {
     padding: 0 1em;
     color: #a0a0a0;
     font-size: 2em;
+}
+
+body.index footer {
+    display: block;
+    margin: 8em 0 0 0;
+    padding: 1em;
+    color: #a0a0a0;
+    font-size: 1em;
+    text-align: center;
 }
