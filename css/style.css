@@ -7,7 +7,6 @@ html, body {
     padding: 0;
     background-color: #060606;
     color: #caceca;
-    font-family: monospace;
 }
 
 
@@ -27,6 +26,7 @@ section.index h1 {
     padding: 0;
     font-size: 12em;
     font-weight: lighter;
+    font-family: monospace;
     letter-spacing: 0.1em;
     text-align: center;
     color: #caceca;
@@ -38,17 +38,20 @@ section.index h4.boast {
     padding: 0;
     letter-spacing: 0.1em;
     font-weight: normal;
+    font-family: monospace;
     text-align: center;
 }
 section.index h4.boast span.spacer {
     color: #f00;
+    font-family: monospace;
 }
 
 nav.index {
     display: block;
-    margin: 1em auto;
+    margin: 2em auto;
     padding: 1em;
     text-align: center;
+    font-family: monospace;
 }
 nav.index a {
     display: inline-block;
@@ -65,4 +68,5 @@ body.index footer {
     color: #a0a0a0;
     font-size: 1em;
     text-align: center;
+    font-family: monospace;
 }
