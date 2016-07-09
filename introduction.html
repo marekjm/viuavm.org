@@ -1,3 +1,29 @@
 ---
 layout: default
 ---
+<div class="chapter">
+    <p class="abstract"><strong>Viua VM</strong> is a register-based virtual machine,
+    programmable in high-level assembly;
+    it is designed for <em>reliability</em>, <em>predictability</em>, <em>error-tolerance</em>, <em>concurrency</em> and
+    <em>fine-grained control</em> over behaviour of the software.
+    </p>
+
+    <p class="summary-first-part">The VM achieves its design goals by equipping programmers with
+    a wide array of tools to craft their software.
+    </p>
+
+    <p class="summary-part"><strong>Reliability</strong> and <strong>error-tolerance</strong> is achieved by a robust
+    system of <em>exception-based error handling</em>, and <em>process restarting</em>.
+    </p>
+
+    <p class="summary-part"><strong>Predictability</strong> and fine-grained <strong>control</strong> over software is
+    achieved by separating programmers from the machine with only a thin layer of programming language (a high-level
+    assembly).</p>
+
+    <p class="note for-summary">The "synchronised" and "unsynchronised" are used instead of "asychronous" and "sychronous" on purpose.
+    </p>
+    <p class="summary-last-part">VM supports two approaches to <strong>concurrency</strong>: an unsychronised, actor-based model using processes
+    communicating via asynchronous message-passing; and a synchronised model using coroutines communicating via calls and return values.
+    </p>
+    <div class="clear"></div>
+</div>

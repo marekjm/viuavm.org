@@ -87,6 +87,8 @@ body footer {
     font-family: monospace;
 }
 
+/** Navigation styles.
+ */
 nav {
     display: block;
     margin: 0 0 1em 0;
@@ -108,4 +110,59 @@ nav a:hover {
 }
 nav span.spacer {
     color: #f00;
+}
+
+/** Introduction manual "chapter" styles.
+ */
+.chapter {
+    display: block;
+    margin: 1em auto;
+    padding: 0;
+    width: 80%;
+    font-family: serif;
+    text-align: justify;
+}
+.chapter p {
+    display: block;
+    width: 75%;
+}
+.chapter p.abstract {
+    font-size: 1.8em;
+}
+.chapter p.summary {
+    font-size: 1.25em;
+}
+.chapter p.summary-first-part {
+    margin: 1em 0 0 0;
+    font-size: 1.25em;
+}
+.chapter p.summary-part {
+    margin: 0;
+    font-size: 1.25em;
+}
+.chapter p.summary-last-part {
+    margin: 0 0 1em 0;
+    font-size: 1.25em;
+}
+
+.chapter p.abstract em, .chapter p.summary em {
+    color: #d0d006;
+    font-style: normal;
+}
+
+/*  Note cast to the right side of the screen.
+ */
+.chapter p.note {
+    font-size: 1em;
+    width: 23%;
+    float: right;
+}
+.chapter p.note.for-summary, .chapter p.note.for-abstract {
+    margin: 0 0 1em 0;
+}
+
+.clear {
+    margin: 0;
+    padding: 0;
+    clear: both;
 }
