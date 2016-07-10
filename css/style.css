@@ -150,6 +150,10 @@ nav span.spacer {
     font-style: normal;
 }
 
+.chapter a {
+    color: inherit;
+}
+
 /*  Note cast to the right side of the screen.
  */
 .chapter p.note {
