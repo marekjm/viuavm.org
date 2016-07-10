@@ -1,0 +1,17 @@
+---
+title: News
+layout: default
+---
+
+<div class="chapter">
+    <h1> News </h1>
+
+    {{ site.news }}
+
+    {% for art in site.categories.news %}
+    <p>
+        <span> {{ art.date | date: '%-d %b %Y' }} </span>
+        <a href="{{ art.url }}">{{ art.title }}</a>
+    </p>
+    {% endfor %}
+</div>
