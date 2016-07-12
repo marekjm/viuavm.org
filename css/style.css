@@ -87,6 +87,7 @@ body footer {
     font-family: monospace;
 }
 
+
 /** Navigation styles.
  */
 nav {
@@ -112,16 +113,29 @@ nav span.spacer {
     color: #f00;
 }
 
+
 /** Introduction manual "chapter" styles.
  */
 .chapter {
     display: block;
-    margin: 1em auto;
+    margin: 2em auto 6em auto;
     padding: 0;
     width: 80%;
     font-family: serif;
     text-align: justify;
+    border-bottom: 1px solid #060;
 }
+
+.chapter > h1 {
+    font-size: 3em;
+    padding: 0 0 0 0.5em;
+    border-bottom: 1px solid #060;
+}
+.chapter > h2 {
+    font-size: 2em;
+    padding: 0 0 0 0.75em;
+}
+
 .chapter p {
     display: block;
     width: 75%;
@@ -144,10 +158,17 @@ nav span.spacer {
     margin: 0 0 1em 0;
     font-size: 1.25em;
 }
-
 .chapter p.abstract em, .chapter p.summary em {
     color: #d0d006;
     font-style: normal;
+}
+.chapter p > code {
+    padding: 2px;
+    color: #40cf40;
+    font-weight: bold;
+}
+.chapter p.note.important-note > code {
+    color: #000;
 }
 
 .chapter a {
@@ -157,16 +178,61 @@ nav span.spacer {
 /*  Note cast to the right side of the screen.
  */
 .chapter p.note {
+    width: 21%;
+    padding: 1%;
+    margin: -1% 0 0 0;
     font-size: 1em;
-    width: 23%;
     float: right;
 }
 .chapter p.note.for-summary, .chapter p.note.for-abstract {
     margin: 0 0 1em 0;
+}
+.chapter p.note.important-note {
+    background-color: #afaf00;
+    color: #000;
+    box-shadow: 0 0 1em #ff0;
 }
 
 .clear {
     margin: 0;
     padding: 0;
     clear: both;
+}
+.clear-right {
+    margin: 0;
+    padding: 0;
+    clear: right;
+}
+
+
+/** Big, fat warnings.
+ */
+section.big-fat-warning, div.big-fat-warning {
+    display: block;
+    width: 90%;
+    margin: 1em auto;
+    padding: 1em;
+    border-radius: 0.25em;
+    background-color: #4f4f4f;
+}
+section.big-red-warning, div.big-red-warning {
+    background-color: #aa0000;
+    box-shadow: 0 0 2em #f00;
+}
+section.big-orange-warning, div.big-orange-warning {
+    background-color: #aa4e00;
+    box-shadow: 0 0 2em #aa4e00;
+}
+section.big-yellow-warning, div.big-yellow-warning {
+    background-color: #dada00;
+    box-shadow: 0 0 2em #ff0;
+}
+.big-fat-warning h1, .big-fat-warning p {
+    color: #fff;
+}
+.big-fat-warning a {
+    color: inherit;
+}
+.big-yellow-warning h1, .big-yellow-warning p {
+    color: #000;
 }
