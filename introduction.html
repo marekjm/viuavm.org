@@ -2,93 +2,65 @@
 layout: default
 ---
 <div class="chapter">
-    <p class="abstract"><strong>Viua VM</strong> is a register-based virtual machine,
-    programmable in high-level assembly;
-    it is designed for <em>reliability</em>, <em>predictability</em>, <em>error-tolerance</em>, <em>concurrency</em> and
-    <em>fine-grained control</em> over behaviour of the software.
+    <p class="abstract">
+        <strong>Viua VM</strong> is a register-based virtual machine,
+        programmable in high-level assembly;
+        it is designed for <em>reliability</em>, <em>predictability</em>, <em>error-tolerance</em>, <em>concurrency</em> and
+        <em>fine-grained control</em> over the software.
     </p>
 
-    <p class="summary-first-part">The VM achieves its design goals by equipping programmers with
-    a wide array of tools to craft their software.
+    <p class="summary-first-part">
+        The VM achieves its design goals by equipping programmers with
+        a wide array of tools to craft their software.
     </p>
 
-    <p class="summary-part"><strong>Reliability</strong> and <strong>error-tolerance</strong> is achieved by a robust
-    system of <em>exception-based error handling</em>, and <em>process restarting</em>.
+    <p class="summary-part">
+        <strong>Reliability</strong> and <strong>error-tolerance</strong> is achieved by a robust
+        system of <em>exception-based error handling</em>, and <em>process restarting</em>.
+        When a program encounters an error there is a way of making it fail and abort, and
+        if the process should be "permanent" it can be restarted by its watchdog.
+        Exceptions and restarting make for a robust mechanism of handling failure and
+        crafting more reliable software.
     </p>
 
-    <p class="summary-part"><strong>Predictability</strong> and fine-grained <strong>control</strong> over software is
-    achieved by separating programmers from the machine with only a thin layer of programming language (a high-level
-    assembly).</p>
-
-    <p class="note for-summary">The "synchronised" and "unsynchronised" are used instead of "asychronous" and "sychronous" on purpose.
+    <p class="summary-part">
+        <strong>Predictability</strong> and fine-grained <strong>control</strong> over software is
+        achieved by separating programmers from the VM with only a thin layer of programming language, and
+        providing programmers with an instruction set that makes it explicit what the program does.
     </p>
-    <p class="summary-last-part">VM supports two approaches to <strong>concurrency</strong>: an unsychronised, actor-based model using processes
-    communicating via asynchronous message-passing; and a synchronised model using coroutines communicating via calls and return values.
-    </p>
-    <div class="clear"></div>
 </div>
 
 <div class="chapter">
     <h2> Features </h2>
-    <p> Machine provides programmers with the following set of features ("WIP" means "Work In Progress", "PF" means "Planned Feature"):
+    <p>
+        Machine provides programmers with the following set of features ("WIP" means "Work In Progress", "PF" means "Planned Feature"):
         <ul>
             <li>compile-time checks of code perfomed by the assembler (WIP)</li>
             <li>separate compilation (assembler is able to produce "object files")</li>
             <li>static and dynamic linking</li>
             <li>hot-swapping dynamically linked modules (WIP)</li>
-            <li>exception-based error handling (every object is throwable and catchable; VM catches C++ exceptions thrown in foreign functions)</li>
+
             <li>first-class functions</li>
             <li>arity-based function overloading</li>
             <li>mechanisms for static and dynamic dispatch of method calls</li>
-            <li>concurrency (WIP)</li>
-            <li>parallelism (given sufficient hardware resources) (WIP)</li>
-            <li>scope-based resource management (no garbage collector)</li>
             <li>coroutines (PF)</li>
+
+            <li>process-based concurrency</li>
+            <li>parallelism (given sufficient hardware resources)</li>
+            <li>virtual process restarting on-failure (using user-programmed watchdog process)</li>
+
+            <li>exception-based error handling (every object is throwable and catchable; VM catches C++ exceptions thrown in foreign functions)</li>
+            <li>scope-based resource management (no Stop-The-World garbage collector)</li>
+            <li>deferred calls</li>
+
             <li>non-blocking foreign function interface (requires at least two-core CPU)</li>
-            <li>virtual process restarting (via user-programmed watchdog process)</li>
             <li>clean FFI for straightforward cooperation with C++ code</li>
+
             <li>no-copy function returns</li>
             <li>by-copy and by-move parameter passing to functions</li>
             <li>safe pointers for inside-VM objects</li>
             <li>move semantics for many instructions</li>
             <li>closures with multiple capture mechanisms (by-copy, by-reference, by-move)</li>
         </ul>
-    </p>
-</div>
-
-<div class="chapter">
-    <h2> Requirements </h2>
-    <p> Machine requires the following software to be available:
-        <ul>
-            <li> a modern C++ compiler supporting C++14; builds are tested with GCC, and Clang++</li>
-            <li> Python 3.5 (or later) is required to run the test suite </li>
-            <li> recent version of Valgrind (3.11 and later) is required for memory tests </li>
-            <li> GNU Make (or compatible build system) is required to compile the code </li>
-            <li> developer scripts assume presence of standard *nix tools: <code>sed</code>, <code>dc</code>, <code>find</code>, <code>xargs</code>, and a sh-compatible shell </li>
-            <li> some developer scripts require Linux operating system </li>
-        </ul>
-    </p>
-    <p> Also, it is assumed that the machine is compiled and run on a *nix-like operating system, and on C++ runtime with enabled exceptions.
-    </p>
-</div>
-
-<div class="chapter">
-    <h2> Development status </h2>
-    <p> Viua is alpha software, it is by no means production ready.
-    New versions are released every two months (give or take a week or three).
-    Release notes are published on Diaspora* under #viuavm tag, <a href="{{ site.releases_url }}">on Github</a>, and
-    in <a href="/news.html">News</a> section.
-    </p>
-
-    <h3> Bugs </h3>
-    <p> Bugs can be reported <a href="{{ site.bugs_url }}">at Github</a>.
-</div>
-
-<div class="chapter">
-    <h2> Communication </h2>
-
-    <p> There are three channels of communication: <a href="{{ site.repository_url }}">Github</a> (pull requests, bug reports, etc.),
-    a <a href="https://twitter.com/viuavm">Twitter account</a> (tweets, news, etc.), and
-    mailing lists on <a href="https://savannah.nongnu.org/mail/?group=viuavm">Savannah</a>.
     </p>
 </div>
