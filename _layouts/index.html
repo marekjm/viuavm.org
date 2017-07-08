@@ -8,21 +8,128 @@
         <section class="index">
             <h1>Viua VM</h1>
             <h4 class="boast">
-                <span>register-based virtual machine</span>
+                <span>parallel, register-based, bytecode virtual machine</span>
                 <span class="spacer">:</span>
                 <span>programmable in high-level assembly</span>
-                <span class="spacer">:</span>
-                <span>written in modern C++</span>
                 <span class="spacer">:</span>
                 <span>published under GNU GPL v3</span>
             </h4>
         </section>
 
-        <nav class="index">
-            <a href="/introduction.html">Introduction</a>
-            <a href="{{ site.documentation_url }}">Documentation</a>
-            <a href="/more.html">More</a>
-        </nav>
+        <hr>
+
+        <!--
+        <section class="part">
+            <h1> Parallelism and concurrency </h1>
+
+            <p>
+                Viua VM supports running huge numbers of concurrent processes, some of them in parallel.
+                This is enabled by implementing user-space MxN scheduler for user processes spawned by
+                software running on Viua.
+            </p>
+
+            <p>
+                The fact that processes are managed by the VM (instead of being OS processes or
+                threads) makes them cheap to spawn, destroy, and switch between.
+            </p>
+
+            <p>
+                Processes are isolated from each other.
+                They do not share data, and their only means of communication are asynchronous messages.
+            </p>
+        </section>
+
+        <section class="part">
+            <h1> Instruction set </h1>
+
+            <p>
+                Viua VM exposes to programmers a custom instruction set that is only a thin layer of
+                abstraction over the VM.
+                Each assembly mnemonic maps directly to a VM instruction, and
+                the source code is an explicit description of what the software will do.
+            </p>
+
+            <p>
+                The instruction set includes operations for <em>basic arithmetic</em>,
+                <em>control flow</em> (jumps, function calls - including tail and
+                deferred calls),
+                <em>data management</em> (copying, moving, and destroying values),
+                <em>inter-process communication</em>,
+                <em>concurrency</em> (spawning and joining processes),
+                <em>error handling</em> (throwing and catching exceptions, restaring crashed processes), and
+                more.
+            </p>
+        </section>
+
+        <section class="part">
+            <h1> Error handling </h1>
+
+            <p>
+                Errors are handled through exceptions.
+                When something bad happens during the course of execution the program should throw an
+                exception, and the VM will deliever it to a handler, or crash the process should no
+                suitable handler be found.
+            </p>
+        </section>
+
+        <section class="part">
+            <h1> Reliability, and long-running software </h1>
+
+            <p>
+                VM provides means of handling errors in a well-structured manner, and
+                responding to process crashes in a way that does not destabilise the whole running system.
+            </p>
+        </section>
+
+        <section class="part">
+            <h1> Eager resource management </h1>
+
+            <p>
+                Another reliability-related feature is the eager resource management scheme the VM employs.
+                All values are deleted as soon as the call frame they were spawned in is dropped, as if
+                all the resources were put on a stack, instead of waiting in limbo for the garbage collector
+                to delete them.
+            </p>
+        </section>
+        -->
+
+        <section class="part">
+            <h1> Feature list </h1>
+
+            <ul class="feature-list">
+                <li>compile-time checks of code perfomed by the assembler</li>
+                <li>separate compilation of bytecode modules</li>
+                <li>static and dynamic linking of bytecode modules</li>
+
+                <li>flat, module-less structure of code (compilation of various languages' module systems with no problems)</li>
+                <li>almost free-form function names, with no length limit</li>
+
+                <li>first-class functions</li>
+                <li>mechanisms for static and dynamic dispatch of function calls</li>
+
+                <li>process-based concurrency</li>
+                <li>inter-process communication via message passing</li>
+                <li>running processes in parallel (given sufficient hardware resources)</li>
+                <li>virtual process restarting on failure (using user-programmed watchdog process)</li>
+
+                <li>exception-based error handling (every object is throwable and catchable)</li>
+                <li>eager, scope-based resource management</li>
+
+                <li>non-blocking foreign function interface (requires at least two-core CPU)</li>
+                <li>clean FFI for straightforward cooperation with C++ code</li>
+
+                <li>no-copy function returns</li>
+                <li>by-copy and by-move parameter passing to functions</li>
+                <li>safe pointers for inside-VM objects</li>
+                <li>move semantics for many instructions</li>
+
+                <li>closures with multiple capture mechanisms (by-copy, by-reference, by-move)</li>
+                <li>deferred calls</li>
+                <li>tail calls</li>
+
+                <li>built-in basic data structures (text, vectors, structures)</li>
+            </ul>
+        </section>
 
         {% include footer.html %}
     </body>
